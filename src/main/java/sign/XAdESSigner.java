@@ -172,7 +172,7 @@ public class XAdESSigner {
 	private KeyingDataProvider getKeyStore(PKCS12Instance pkcs12Instance) throws KeyStoreException {
 		return  new FileSystemKeyStoreKeyingDataProvider("PKCS12", pkcs12Instance.getFilePath(),
 				new FirstCertificateSelector(), new DirectPasswordProvider(pkcs12Instance.getKeyStorePassword()),
-				new DirectPasswordProvider(pkcs12Instance.getKeyStorePassword()), true);
+				new DirectPasswordProvider(pkcs12Instance.getKeyStorePassword()), false);
 	}
 	
 	private java.util.List<FileSpecification> getFileFromFolder(String folderPath) {
